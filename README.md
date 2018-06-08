@@ -1,6 +1,6 @@
-## Create React HOC App
+## Create React HOC Fetch App
 
-### Exemplo de implementação de Higher-Order Component com Create React App
+### Exemplo de implementação de Higher-Order Component com Create React App e requisição à API
 
 Passo a passo em:
 
