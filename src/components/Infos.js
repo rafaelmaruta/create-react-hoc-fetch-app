@@ -1,5 +1,8 @@
 import React from 'react';
 import { withLoading } from '../hocs/Loading';
+import { fetchAPI } from '../hocs/fetchAPI';
+
+const apiURL = 'http://www.mocky.io/v2/5b1afbbe3300008825fb161b';
 
 const Infos = () => (
   <ul style={{ clear: 'both', display: 'block', listStyle: 'none' }}>
@@ -16,4 +19,4 @@ const Infos = () => (
   </ul>
 );
 
-export default withLoading(Infos);
+export default fetchAPI(withLoading(Infos))(apiURL);
