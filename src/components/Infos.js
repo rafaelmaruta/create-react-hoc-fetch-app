@@ -1,5 +1,5 @@
 import React from 'react';
-import { withLoading } from '../hocs/Loading';
+import { withLoading } from '../hocs/withLoading';
 import { fetchAPI } from '../hocs/fetchAPI';
 
 const apiURL = 'http://www.mocky.io/v2/5b1afbbe3300008825fb161b';
