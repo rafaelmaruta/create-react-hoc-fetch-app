@@ -1,15 +1,33 @@
 import React from 'react';
-import { withLoading } from '../hocs/withLoading';
+import PropTypes from 'prop-types';
 import { fetchAPI } from '../hocs/fetchAPI';
+import { withLoading } from '../hocs/withLoading';
 
 const apiURL = 'http://www.mocky.io/v2/5b1afc48330000b435fb161d';
 
-const ReposList = () => (
+const StarredList = ({ data }) => (
   <ul style={{ clear: 'both', display: 'block', listStyle: 'none' }}>
     <li>Minha lista de favoritos:</li>
-    <li><a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-    <li><a href="https://about.gitlab.com" target="_blank" rel="noopener noreferrer">GitLab</a></li>
+    {data.map(({ id, name, url }) => (
+      <li key={id}>
+        <a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
+      </li>
+    ))}
   </ul>
 );
 
-export default fetchAPI(withLoading(ReposList))(apiURL);
+StarredList.defaultProps = {
+  data: []
+}
+
+StarredList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    url: PropTypes.string
+  }))
+}
+
+const ListLoading = withLoading(StarredList);
+
+export default fetchAPI(ListLoading, apiURL);

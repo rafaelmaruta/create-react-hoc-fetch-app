@@ -1,22 +1,41 @@
 import React from 'react';
-import { withLoading } from '../hocs/withLoading';
+import PropTypes from 'prop-types';
 import { fetchAPI } from '../hocs/fetchAPI';
+import { withLoading } from '../hocs/withLoading';
 
 const apiURL = 'http://www.mocky.io/v2/5b1afbbe3300008825fb161b';
 
-const Infos = () => (
-  <ul style={{ clear: 'both', display: 'block', listStyle: 'none' }}>
-    <li>
-      <img
-        alt="me"
-        src='https://avatars3.githubusercontent.com/u/7636517?s=460&v=4'
-        style={{ margin: '0 auto' }}
-      />
-    </li>
-    <li>My name: Rafael Maruta</li>
-    <li>My username: rafaelmaruta</li>
-    <li>My login: rafaelmaruta</li>
-  </ul>
-);
+const Infos = ({ data }) => {
+  const { avatar_url, blog, login, name } = data;
+  return (
+    <ul style={{ clear: 'both', display: 'block', listStyle: 'none' }}>
+      <li>
+        <img
+          alt='me'
+          src={avatar_url}
+          style={{ margin: '0 auto' }}
+        />
+      </li>
+      <li>My name: {name}</li>
+      <li>My username: {login}</li>
+      <li>My blog: {blog}</li>
+    </ul>
+  )
+};
 
-export default fetchAPI(withLoading(Infos))(apiURL);
+Infos.defaultProps = {
+  data: {}
+}
+
+Infos.propTypes = {
+  data: PropTypes.shape({
+    avatar_url: PropTypes.string,
+    blog: PropTypes.string,
+    login: PropTypes.string,
+    name: PropTypes.string
+  })
+}
+
+const InfosLoading = withLoading(Infos);
+
+export default fetchAPI(InfosLoading, apiURL);
