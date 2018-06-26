@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import fetch from 'isomorphic-fetch';
 
-export const fetchAPI = (MyComponent, apiUrl) => {
+export const fetchAPI = MyComponent => {
   class fetchAPIHOC extends Component {
     state = {
       data: false
@@ -28,9 +28,9 @@ export const fetchAPI = (MyComponent, apiUrl) => {
           data={this.state.data}
           title={this.props.title}
         />
-      )
+      );
     }
   }
 
   return fetchAPIHOC;
-}
+};

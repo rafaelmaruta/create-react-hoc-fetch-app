@@ -17,7 +17,7 @@ const List = ({ data, title }) => (
 List.defaultProps = {
   data: [],
   title: ''
-}
+};
 
 List.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({
@@ -26,7 +26,7 @@ List.propTypes = {
     url: PropTypes.string
   })),
   title: PropTypes.string
-}
+};
 
 const ListLoading = withLoading(List);
 
