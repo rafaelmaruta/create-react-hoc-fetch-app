@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { fetchAPI } from '../hocs/fetchAPI';
 import { withLoading } from '../hocs/withLoading';
 
-const apiURL = 'http://www.mocky.io/v2/5b1afbbe3300008825fb161b';
-
 const Infos = ({ data }) => {
   const { avatar_url, blog, login, name } = data;
   return (
@@ -38,4 +36,4 @@ Infos.propTypes = {
 
 const InfosLoading = withLoading(Infos);
 
-export default fetchAPI(InfosLoading, apiURL);
+export default fetchAPI(InfosLoading);
