@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { fetchAPI } from '../hocs/fetchAPI';
 import { withLoading } from '../hocs/withLoading';
 
-const apiURL = 'http://www.mocky.io/v2/5b1afc89330000131ffb161e';
-
-const ReposList = ({ data }) => (
+const List = ({ data, title }) => (
   <ul style={{ clear: 'both', display: 'block', listStyle: 'none' }}>
-    <li>Minha lista de repos:</li>
+    <li>{title}</li>
     {data.map(({ id, name, url }) => (
       <li key={id}>
         <a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
@@ -16,18 +14,20 @@ const ReposList = ({ data }) => (
   </ul>
 );
 
-ReposList.defaultProps = {
-  data: []
+List.defaultProps = {
+  data: [],
+  title: ''
 }
 
-ReposList.propTypes = {
+List.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
     url: PropTypes.string
-  }))
+  })),
+  title: PropTypes.string
 }
 
-const ListLoading = withLoading(ReposList);
+const ListLoading = withLoading(List);
 
-export default fetchAPI(ListLoading, apiURL);
+export default fetchAPI(ListLoading);

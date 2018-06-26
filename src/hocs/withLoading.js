@@ -2,9 +2,9 @@ import React from 'react';
 import logo from '../logo.svg';
 
 export const withLoading = Component =>
-  ({ data }) =>
-    data
-      ? <Component data={data} />
+  props =>
+    props.data
+      ? <Component {...props} />
       : <img
           alt="logo"
           className="App-logo"
