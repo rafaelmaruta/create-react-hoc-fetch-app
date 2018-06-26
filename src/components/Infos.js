@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { fetchAPI } from '../hocs/fetchAPI';
 import { withLoading } from '../hocs/withLoading';
+import { compose } from 'recompose';
 
 const Infos = ({ data }) => {
   const { avatar_url, blog, login, name } = data;
@@ -34,6 +35,4 @@ Infos.propTypes = {
   })
 };
 
-const InfosLoading = withLoading(Infos);
-
-export default fetchAPI(InfosLoading);
+export default compose(fetchAPI, withLoading)(Infos);

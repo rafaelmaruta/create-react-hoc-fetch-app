@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { fetchAPI } from '../hocs/fetchAPI';
 import { withLoading } from '../hocs/withLoading';
+import { compose } from 'recompose';
 
 const List = ({ data, title }) => (
   <ul style={{ clear: 'both', display: 'block', listStyle: 'none' }}>
@@ -28,6 +29,4 @@ List.propTypes = {
   title: PropTypes.string
 };
 
-const ListLoading = withLoading(List);
-
-export default fetchAPI(ListLoading);
+export default compose(fetchAPI, withLoading)(List);
