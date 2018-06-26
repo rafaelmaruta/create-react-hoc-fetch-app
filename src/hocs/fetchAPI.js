@@ -33,4 +33,4 @@ export const fetchAPI = (MyComponent, apiUrl) => {
   }
 
   return fetchAPIHOC;
-}
+};
