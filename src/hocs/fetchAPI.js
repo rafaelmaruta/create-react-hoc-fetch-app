@@ -28,7 +28,7 @@ export const fetchAPI = (MyComponent, apiUrl) => {
           data={this.state.data}
           title={this.props.title}
         />
-      )
+      );
     }
   }
 

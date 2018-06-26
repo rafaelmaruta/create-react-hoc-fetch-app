@@ -25,7 +25,7 @@ const Infos = ({ data }) => {
 
 Infos.defaultProps = {
   data: {}
-}
+};
 
 Infos.propTypes = {
   data: PropTypes.shape({
@@ -34,7 +34,7 @@ Infos.propTypes = {
     login: PropTypes.string,
     name: PropTypes.string
   })
-}
+};
 
 const InfosLoading = withLoading(Infos);
 
