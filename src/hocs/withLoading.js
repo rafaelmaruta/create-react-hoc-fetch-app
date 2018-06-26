@@ -6,8 +6,8 @@ export const withLoading = Component =>
     data
       ? <Component data={data} />
       : <img
-          alt="logo"
-          className="App-logo"
+          alt='logo'
+          className='App-logo'
           src={logo}
           style={{ display: 'block', margin: '0 auto' }}
         />

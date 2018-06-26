@@ -18,9 +18,9 @@ export const fetchAPI = (MyComponent, apiUrl) => {
         <MyComponent
           data={this.state.data}
         />
-      )
+      );
     }
   }
 
   return fetchAPIHOC;
-}
+};

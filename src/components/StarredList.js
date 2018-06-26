@@ -18,7 +18,7 @@ const StarredList = ({ data }) => (
 
 StarredList.defaultProps = {
   data: []
-}
+};
 
 StarredList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({
@@ -26,7 +26,7 @@ StarredList.propTypes = {
     name: PropTypes.string,
     url: PropTypes.string
   }))
-}
+};
 
 const ListLoading = withLoading(StarredList);
 

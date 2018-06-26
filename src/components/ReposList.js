@@ -18,7 +18,7 @@ const ReposList = ({ data }) => (
 
 ReposList.defaultProps = {
   data: []
-}
+};
 
 ReposList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({
@@ -26,7 +26,7 @@ ReposList.propTypes = {
     name: PropTypes.string,
     url: PropTypes.string
   }))
-}
+};
 
 const ListLoading = withLoading(ReposList);
 

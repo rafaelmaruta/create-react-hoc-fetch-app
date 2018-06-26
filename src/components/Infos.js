@@ -7,6 +7,7 @@ const apiURL = 'http://www.mocky.io/v2/5b1afbbe3300008825fb161b';
 
 const Infos = ({ data }) => {
   const { avatar_url, blog, login, name } = data;
+
   return (
     <ul style={{ clear: 'both', display: 'block', listStyle: 'none' }}>
       <li>
@@ -20,12 +21,12 @@ const Infos = ({ data }) => {
       <li>My username: {login}</li>
       <li>My blog: {blog}</li>
     </ul>
-  )
+  );
 };
 
 Infos.defaultProps = {
   data: {}
-}
+};
 
 Infos.propTypes = {
   data: PropTypes.shape({
@@ -34,7 +35,7 @@ Infos.propTypes = {
     login: PropTypes.string,
     name: PropTypes.string
   })
-}
+};
 
 const InfosLoading = withLoading(Infos);
 
