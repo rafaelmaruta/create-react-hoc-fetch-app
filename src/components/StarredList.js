@@ -10,7 +10,13 @@ const StarredList = ({ data }) => (
     <li>Minha lista de favoritos:</li>
     {data.map(({ id, name, url }) => (
       <li key={id}>
-        <a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
+        <a
+          href={url}
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          {name}
+        </a>
       </li>
     ))}
   </ul>
