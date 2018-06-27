@@ -12,9 +12,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Infos apiUrl={infoApiURL} />
-        <List apiUrl={reposApiURL} title='Minha lista de repos:' />
-        <List apiUrl={starredApiURL} title='Minha lista de favoritos:' />
+        <Infos apiURL={infoApiURL} />
+        <List apiURL={reposApiURL} title='Minha lista de repos:' />
+        <List apiURL={starredApiURL} title='Minha lista de favoritos:' />
       </div>
     );
   }

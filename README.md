@@ -4,4 +4,4 @@
 
 Passo a passo em:
 
-[https://medium.com/reactbrasil/](https://medium.com/reactbrasil/)
+[https://medium.com/reactbrasil/](https://medium.com/reactbrasil/meu-primeiro-higher-order-component-parte-2-fb0ad6922a9c)

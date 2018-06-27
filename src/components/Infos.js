@@ -5,6 +5,7 @@ import { withLoading } from '../hocs/withLoading';
 
 const Infos = ({ data }) => {
   const { avatar_url, blog, login, name } = data;
+
   return (
     <ul style={{ clear: 'both', display: 'block', listStyle: 'none' }}>
       <li>
